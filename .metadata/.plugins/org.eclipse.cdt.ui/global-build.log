@@ -1,110 +1,21 @@
-13:48:52 **** Build of configuration Debug for project BT1_CMSIS_LIB ****
+15:52:05 **** Incremental Build of configuration Debug for project BT1_CMSIS_LIB ****
 make -j8 all 
-arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411vetx.d" -MT"Startup/startup_stm32f411vetx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411vetx.o" "../Startup/startup_stm32f411vetx.s"
 arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Include" -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Include" -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
-arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Include" -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
-arm-none-eabi-gcc "../Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411VETx -DSTM32 -DSTM32F4 -c -I../Inc -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Include" -I"E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/system_stm32f4xx.d" -MT"Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/system_stm32f4xx.o"
-In file included from ../Src/system_stm32f4xx.c:48:
-E:/232_Embedded_System_Programming/BT1/CMSIS_LIB/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:174:2: error: #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
-  174 | #error "Please select first the target STM32F4xx device used in your application (in stm32f4xx.h file)"
-      |  ^~~~~
-../Src/system_stm32f4xx.c:137:1: error: unknown type name 'uint32_t'
-  137 | uint32_t SystemCoreClock = 16000000;
-      | ^~~~~~~~
-../Src/system_stm32f4xx.c:49:1: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-   48 | #include "stm32f4xx.h"
-  +++ |+#include <stdint.h>
-   49 | 
-../Src/system_stm32f4xx.c:138:7: error: unknown type name 'uint8_t'
-  138 | const uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
-      |       ^~~~~~~
-../Src/system_stm32f4xx.c:139:7: error: unknown type name 'uint8_t'
-  139 | const uint8_t APBPrescTable[8]  = {0, 0, 0, 0, 1, 2, 3, 4};
-      |       ^~~~~~~
-../Src/system_stm32f4xx.c: In function 'SystemCoreClockUpdate':
-../Src/system_stm32f4xx.c:222:3: error: unknown type name 'uint32_t'
-  222 |   uint32_t tmp = 0, pllvco = 0, pllp = 2, pllsource = 0, pllm = 2;
-      |   ^~~~~~~~
-../Src/system_stm32f4xx.c:222:3: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-../Src/system_stm32f4xx.c:225:9: error: 'RCC' undeclared (first use in this function)
-  225 |   tmp = RCC->CFGR & RCC_CFGR_SWS;
-      |         ^~~
-../Src/system_stm32f4xx.c:225:9: note: each undeclared identifier is reported only once for each function it appears in
-../Src/system_stm32f4xx.c:225:21: error: 'RCC_CFGR_SWS' undeclared (first use in this function)
-  225 |   tmp = RCC->CFGR & RCC_CFGR_SWS;
-      |                     ^~~~~~~~~~~~
-../Src/system_stm32f4xx.c:55:26: error: 'uint32_t' undeclared (first use in this function)
-   55 |   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
-      |                          ^~~~~~~~
-../Src/system_stm32f4xx.c:230:25: note: in expansion of macro 'HSI_VALUE'
-  230 |       SystemCoreClock = HSI_VALUE;
-      |                         ^~~~~~~~~
-../Src/system_stm32f4xx.c:55:26: note: 'uint32_t' is defined in header '<stdint.h>'; did you forget to '#include <stdint.h>'?
-   55 |   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
-      |                          ^~~~~~~~
-../Src/system_stm32f4xx.c:230:25: note: in expansion of macro 'HSI_VALUE'
-  230 |       SystemCoreClock = HSI_VALUE;
-      |                         ^~~~~~~~~
-../Src/system_stm32f4xx.c:55:35: error: expected ')' before numeric constant
-   55 |   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
-      |                        ~          ^~~~~~~~
-../Src/system_stm32f4xx.c:230:25: note: in expansion of macro 'HSI_VALUE'
-  230 |       SystemCoreClock = HSI_VALUE;
-      |                         ^~~~~~~~~
-../Src/system_stm32f4xx.c:51:35: error: expected ')' before numeric constant
-   51 |   #define HSE_VALUE    ((uint32_t)25000000) /*!< Default value of the External oscillator in Hz */
-      |                        ~          ^~~~~~~~
-../Src/system_stm32f4xx.c:233:25: note: in expansion of macro 'HSE_VALUE'
-  233 |       SystemCoreClock = HSE_VALUE;
-      |                         ^~~~~~~~~
-../Src/system_stm32f4xx.c:240:35: error: 'RCC_PLLCFGR_PLLSRC' undeclared (first use in this function)
-  240 |       pllsource = (RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC) >> 22;
-      |                                   ^~~~~~~~~~~~~~~~~~
-../Src/system_stm32f4xx.c:241:29: error: 'RCC_PLLCFGR_PLLM' undeclared (first use in this function)
-  241 |       pllm = RCC->PLLCFGR & RCC_PLLCFGR_PLLM;
-      |                             ^~~~~~~~~~~~~~~~
-../Src/system_stm32f4xx.c:51:35: error: expected ')' before numeric constant
-   51 |   #define HSE_VALUE    ((uint32_t)25000000) /*!< Default value of the External oscillator in Hz */
-      |                        ~          ^~~~~~~~
-../Src/system_stm32f4xx.c:246:19: note: in expansion of macro 'HSE_VALUE'
-  246 |         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
-      |                   ^~~~~~~~~
-../Src/system_stm32f4xx.c:246:56: error: 'RCC_PLLCFGR_PLLN' undeclared (first use in this function)
-  246 |         pllvco = (HSE_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
-      |                                                        ^~~~~~~~~~~~~~~~
-../Src/system_stm32f4xx.c:55:35: error: expected ')' before numeric constant
-   55 |   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
-      |                        ~          ^~~~~~~~
-../Src/system_stm32f4xx.c:251:19: note: in expansion of macro 'HSI_VALUE'
-  251 |         pllvco = (HSI_VALUE / pllm) * ((RCC->PLLCFGR & RCC_PLLCFGR_PLLN) >> 6);
-      |                   ^~~~~~~~~
-../Src/system_stm32f4xx.c:254:32: error: 'RCC_PLLCFGR_PLLP' undeclared (first use in this function)
-  254 |       pllp = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLP) >>16) + 1 ) *2;
-      |                                ^~~~~~~~~~~~~~~~
-../Src/system_stm32f4xx.c:55:35: error: expected ')' before numeric constant
-   55 |   #define HSI_VALUE    ((uint32_t)16000000) /*!< Value of the Internal oscillator in Hz*/
-      |                        ~          ^~~~~~~~
-../Src/system_stm32f4xx.c:258:25: note: in expansion of macro 'HSI_VALUE'
-  258 |       SystemCoreClock = HSI_VALUE;
-      |                         ^~~~~~~~~
-../Src/system_stm32f4xx.c:263:37: error: 'RCC_CFGR_HPRE' undeclared (first use in this function)
-  263 |   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4)];
-      |                                     ^~~~~~~~~~~~~
-../Src/main.c: In function 'SystemClock_Config':
-../Src/main.c:43:18: error: 'RCC_CFGR_PLLMULL9' undeclared (first use in this function)
-   43 |     RCC->CFGR |= RCC_CFGR_PLLMULL9 | RCC_CFGR_PLLSRC;
-      |                  ^~~~~~~~~~~~~~~~~
-../Src/main.c:43:18: note: each undeclared identifier is reported only once for each function it appears in
-../Src/main.c:43:38: error: 'RCC_CFGR_PLLSRC' undeclared (first use in this function); did you mean 'RCC_PLLCFGR_PLLSRC'?
-   43 |     RCC->CFGR |= RCC_CFGR_PLLMULL9 | RCC_CFGR_PLLSRC;
-      |                                      ^~~~~~~~~~~~~~~
-      |                                      RCC_PLLCFGR_PLLSRC
-../Src/main.c: At top level:
-../Src/main.c:55:13: warning: 'GPIO_Init' declared 'static' but never defined [-Wunused-function]
-   55 | static void GPIO_Init(void);
-      |             ^~~~~~~~~
-make: *** [Src/subdir.mk:28: Src/system_stm32f4xx.o] Error 1
-make: *** Waiting for unfinished jobs....
-make: *** [Src/subdir.mk:28: Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "BT1_CMSIS_LIB.elf" @"objects.list"   -mcpu=cortex-m4 -T"E:\232_Embedded_System_Programming\BT1\CMSIS_LIB\STM32F411VETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="BT1_CMSIS_LIB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: BT1_CMSIS_LIB.elf
+ 
+arm-none-eabi-size  BT1_CMSIS_LIB.elf 
+arm-none-eabi-objdump -h -S BT1_CMSIS_LIB.elf  > "BT1_CMSIS_LIB.list"
+   text	   data	    bss	    dec	    hex	filename
+   1140	     12	   1572	   2724	    aa4	BT1_CMSIS_LIB.elf
+Finished building: default.size.stdout
+ 
+Finished building: BT1_CMSIS_LIB.list
+ 
+15:52:13 **** Incremental Build of configuration Debug for project BT1_CMSIS_LIB ****
+make -j8 all 
+arm-none-eabi-size  BT1_CMSIS_LIB.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1140	     12	   1572	   2724	    aa4	BT1_CMSIS_LIB.elf
+Finished building: default.size.stdout
+ 
